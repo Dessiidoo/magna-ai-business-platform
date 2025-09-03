@@ -5,10 +5,11 @@ import { Toaster } from '@/components/ui/toaster';
 import { Navigation } from './components/Navigation';
 import { Dashboard } from './pages/Dashboard';
 import { CompanyProfile } from './pages/CompanyProfile';
-import { Analytics } from './pages/Analytics';
-import { LeadGeneration } from './pages/LeadGeneration';
-import { ProcessAutomation } from './pages/ProcessAutomation';
-import { CostOptimization } from './pages/CostOptimization';
+import { AIMonitoring } from './pages/AIMonitoring';
+import { AutomationTemplates } from './pages/AutomationTemplates';
+import { WorkflowBuilder } from './pages/WorkflowBuilder';
+import { ContentStudio } from './pages/ContentStudio';
+import { CompetitorIntelligence } from './pages/CompetitorIntelligence';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,17 +22,18 @@ const queryClient = new QueryClient({
 
 function AppInner() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black text-white">
       <Router>
         <Navigation />
         <main className="container mx-auto px-4 py-8">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/company/:id" element={<CompanyProfile />} />
-            <Route path="/analytics" element={<Analytics />} />
-            <Route path="/leads" element={<LeadGeneration />} />
-            <Route path="/automation" element={<ProcessAutomation />} />
-            <Route path="/optimization" element={<CostOptimization />} />
+            <Route path="/ai-monitoring" element={<AIMonitoring />} />
+            <Route path="/templates" element={<AutomationTemplates />} />
+            <Route path="/workflows" element={<WorkflowBuilder />} />
+            <Route path="/content" element={<ContentStudio />} />
+            <Route path="/intelligence" element={<CompetitorIntelligence />} />
           </Routes>
         </main>
         <Toaster />
