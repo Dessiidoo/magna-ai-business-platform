@@ -1,21 +1,10 @@
 import { defineConfig } from 'vite'
-import path from 'path'
-import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname),
-      '~backend/client': path.resolve(__dirname, './client'),
-      '~backend': path.resolve(__dirname, '../backend'),
-    },
+  plugins: [react()],
+  server: {
+    port: 3000,
   },
-  plugins: [
-    tailwindcss(),
-    react(),
-  ],
-  mode: "development",
-  build: {
-    minify: false,
-  }
 })
